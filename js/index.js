@@ -1,4 +1,4 @@
-const API_URL = "https://600bd9e138fd25001702cc08.mockapi.io/api/v1";
+const API_URL = "http://localhost:3000";
 
 function callAPI(endpoint, method = "GET", body) {
     return axios({
@@ -18,33 +18,33 @@ var listLocal_2 = function() {
             for (var i in tour_hot) {
                 list_tour_hot =
                     `<div class="main-block hotel-block">
-                <div class="main-img">
-                    <a href="#">
-                        <img src="images/${tour_hot[i].img}" class="img-responsive" alt="hotel-img" />
-                    </a>
-                    <div class="main-mask">
-                        <ul class="list-unstyled list-inline offer-price-1">
-                            <li class="price">$${tour_hot[i].price}<span class="divider">|</span><span class="pkg">Avg/Week</span></li>
-                            <li class="rating">
-                                <span><i class="fa fa-star orange"></i></span>
-                                <span><i class="fa fa-star orange"></i></span>
-                                <span><i class="fa fa-star orange"></i></span>
-                                <span><i class="fa fa-star orange"></i></span>
-                                <span><i class="fa fa-star lightgrey"></i></span>
-                            </li>
-                        </ul>
+                        <div class="main-img">
+                            <a href="#">
+                                <img src="images/${tour_hot[i].img}" class="img-responsive" alt="hotel-img" />
+                            </a>
+                            <div class="main-mask">
+                                <ul class="list-unstyled list-inline offer-price-1">
+                                    <li class="price">$${tour_hot[i].price}<span class="divider">|</span><span class="pkg">Avg/Week</span></li>
+                                    <li class="rating">
+                                        <span><i class="fa fa-star orange"></i></span>
+                                        <span><i class="fa fa-star orange"></i></span>
+                                        <span><i class="fa fa-star orange"></i></span>
+                                        <span><i class="fa fa-star orange"></i></span>
+                                        <span><i class="fa fa-star lightgrey"></i></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="main-info hotel-info">
+                            <div class="arrow">
+                                <div data-toggle="modal" data-target="#myModalHot" onclick="chitiet_hot('${tour_hot[i].id}')"><i class="fa fa-angle-right"></i></div>
+                            </div>
+                            <div class="main-title hotel-title">
+                                <a href="#">${tour_hot[i].name}</a>
+                                <p>From: ${tour_hot[i].from}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="main-info hotel-info">
-                    <div class="arrow">
-                        <div data-toggle="modal" data-target="#myModalHot" onclick="chitiet_hot('${tour_hot[i].id}')"><i class="fa fa-angle-right"></i></div>
-                    </div>
-                    <div class="main-title hotel-title">
-                        <a href="#">${tour_hot[i].name}</a>
-                        <p>From: ${tour_hot[i].from}</p>
-                    </div>
-                </div>
-            </div>
            
         `;
                 document.getElementById("test").setAttribute("id", "items");
